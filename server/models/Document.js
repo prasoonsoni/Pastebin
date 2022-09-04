@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const { Schema } = mongoose
 const shortid = require('shortid')
 
-const ContentSchema = new Schema({
+const DocumentSchema = new Schema({
     _id: {
         type: String,
         default: shortid.generate
@@ -25,4 +25,4 @@ const ContentSchema = new Schema({
     }
 })
 
-module.exports = mongoose.model('Content', ContentSchema)
+module.exports = mongoose.model('Document', DocumentSchema)

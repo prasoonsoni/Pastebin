@@ -11,6 +11,8 @@ app.get('/', (req, res) => {
     res.send('success')
 })
 
+app.use('/api', require('./routes/documentRoutes'))
+
 app.listen(port, () => {
     console.log(`Server listening on http://localhost:${port}`)
 })
