@@ -14,4 +14,23 @@ const createDocument = async (req, res) => {
     }
 }
 
-module.exports = { createDocument }
+const updateDocument = async (req, res) => {
+    try {
+        const { title, description } = req.body
+        const id = req.params.id
+        const content = await Document.findOne({ _id: id })
+        if (!content) {
+            return res.json({ success: false, message: "Document not found" })
+        }
+        const updateDocument = await Document.updateOne({ _id: id }, { $set: { title, description, updated_at: Date.now() } })
+        if (!updateDocument) {
+            return res.json({ success: false, message: "Error Updating Document" })
+        }
+        return res.json({ success: true, message: "Document Updated Successfully", content })
+    } catch (error) {
+        console.log(error)
+        return res.json({ success: false, message: "Something went wrong. Try Again!!!" })
+    }
+}
+
+module.exports = { createDocument, updateDocument }
