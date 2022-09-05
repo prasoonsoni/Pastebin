@@ -5,8 +5,8 @@ import { ViewIcon } from '@chakra-ui/icons'
 const Existing = () => {
     return (
         <>
-            <Input colorScheme="linkedin" placeholder="Enter Code Here..." w="300px" />
-            <Button leftIcon={<ViewIcon />} colorScheme="linkedin" w="300px">View</Button>
+            <Input colorScheme="blue" placeholder="Enter Code Here..." w="300px" />
+            <Button leftIcon={<ViewIcon />} colorScheme="blue" w="300px">View</Button>
         </>
     )
 }
