@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import { InputGroup, InputRightElement, useToast, Button, Input, FormControl, FormLabel, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton } from '@chakra-ui/react'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 import { useNavigate } from 'react-router-dom'
@@ -41,6 +41,8 @@ const PasswordModal = (props) => {
                 status: "success",
                 duration: 2000,
             })
+            props.setCorrect(true)
+            props.onClose()
         } else {
             toast({
                 title: data.message,
