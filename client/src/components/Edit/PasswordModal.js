@@ -4,13 +4,15 @@ import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 import { useNavigate } from 'react-router-dom'
 const BASE_URL = process.env.REACT_APP_BASE_URL
 const PasswordModal = (props) => {
-    const initialRef = useRef(null)
-    const finalRef = useRef(null)
     const toast = useToast()
     const navigate = useNavigate()
     const [show, setShow] = useState(false)
     const [loading, setLoading] = useState(false)
     const [password, setPassword] = useState('')
+    
+    const handleOnCancel = () => {
+        navigate('/')
+    }
 
     const handleOnCreate = async () => {
         if (password.length === 0) {
@@ -52,8 +54,7 @@ const PasswordModal = (props) => {
     return (
         <>
             <Modal
-                initialFocusRef={initialRef}
-                finalFocusRef={finalRef}
+            closeOnOverlayClick={false}
                 isOpen={props.isOpen}
                 onClose={props.onClose}
                 isCentered>
@@ -62,8 +63,7 @@ const PasswordModal = (props) => {
                     backdropFilter='blur(5px)'
                 />
                 <ModalContent>
-                    <ModalHeader>Set Password For Editing</ModalHeader>
-                    <ModalCloseButton />
+                    <ModalHeader>Enter Password to Continue</ModalHeader>
                     <ModalBody pb={6}>
                         <FormControl>
                             <FormLabel>Password</FormLabel>
@@ -80,9 +80,9 @@ const PasswordModal = (props) => {
 
                     <ModalFooter>
                         <Button colorScheme='blue' mr={3} onClick={handleOnCreate} isLoading={loading} loadingText="Saving...">
-                            Save
+                            Continue
                         </Button>
-                        <Button onClick={props.onClose}>Cancel</Button>
+                        <Button onClick={handleOnCancel}>Cancel</Button>
                     </ModalFooter>
                 </ModalContent>
             </Modal>
