@@ -13,7 +13,7 @@ const Edit = () => {
     return (
         <Box bg="#EEF2E6" h="100vh" align="center">
             <VStack h="full">
-            <PasswordModal isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+            <PasswordModal isOpen={isOpen} onOpen={onOpen} onClose={onClose} id={id} />
                 <Text></Text>
             </VStack>
         </Box>

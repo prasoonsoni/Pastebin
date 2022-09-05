@@ -3,18 +3,19 @@ import { InputGroup, InputRightElement, useToast, Button, Input, FormControl, Fo
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 import { useNavigate } from 'react-router-dom'
 const BASE_URL = process.env.REACT_APP_BASE_URL
+
 const PasswordModal = (props) => {
     const toast = useToast()
     const navigate = useNavigate()
     const [show, setShow] = useState(false)
     const [loading, setLoading] = useState(false)
     const [password, setPassword] = useState('')
-    
+
     const handleOnCancel = () => {
         navigate('/')
     }
 
-    const handleOnCreate = async () => {
+    const handleOnContinue = async () => {
         if (password.length === 0) {
             toast({
                 title: "Password is required",
@@ -24,7 +25,7 @@ const PasswordModal = (props) => {
             return
         }
         setLoading(true)
-        const response = await fetch(`${BASE_URL}/api/create`, {
+        const response = await fetch(`${BASE_URL}/api/get/${props.id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -36,11 +37,10 @@ const PasswordModal = (props) => {
         const data = await response.json()
         if (data.success) {
             toast({
-                title: data.message,
+                title: "You Can Edit Now",
                 status: "success",
                 duration: 2000,
             })
-            navigate(`/edit/${data.content._id}`)
         } else {
             toast({
                 title: data.message,
@@ -54,7 +54,7 @@ const PasswordModal = (props) => {
     return (
         <>
             <Modal
-            closeOnOverlayClick={false}
+                closeOnOverlayClick={false}
                 isOpen={props.isOpen}
                 onClose={props.onClose}
                 isCentered>
@@ -79,7 +79,7 @@ const PasswordModal = (props) => {
                     </ModalBody>
 
                     <ModalFooter>
-                        <Button colorScheme='blue' mr={3} onClick={handleOnCreate} isLoading={loading} loadingText="Saving...">
+                        <Button colorScheme='blue' mr={3} onClick={handleOnContinue} isLoading={loading} loadingText="Checking...">
                             Continue
                         </Button>
                         <Button onClick={handleOnCancel}>Cancel</Button>
