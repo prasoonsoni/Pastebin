@@ -42,6 +42,8 @@ const PasswordModal = (props) => {
                 duration: 2000,
             })
             props.setCorrect(true)
+            props.setTitle(data.content.title)
+            props.setDescription(data.content.description)
             props.onClose()
         } else {
             toast({

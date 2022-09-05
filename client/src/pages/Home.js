@@ -6,7 +6,7 @@ import Logo from '../components/Logo'
 
 const Home = () => {
     return (
-        <Box bg="#EEF2E6" h="100vh" align="center">
+        <Box bg="#EEF2E6" minHeight="100vh" align="center">
             <VStack h="full">
                 <Logo />
                 <Existing />
