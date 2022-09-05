@@ -15,6 +15,10 @@ const DocumentSchema = new Schema({
         type: String,
         default: "",
     },
+    password: {
+        type: String,
+        required: true
+    },
     created_at: {
         type: Number,
         default: Date.now()
