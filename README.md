@@ -49,9 +49,16 @@
 * Express.js
 * MongoDB
 * JavaScript
+* Chakra UI
 
 <!-- SCREENSHOTS -->
 ## <img src="https://cdn-icons-png.flaticon.com/512/6823/6823853.png" width="32" height="32"> Screenshots
+![image](https://user-images.githubusercontent.com/75159757/188652635-1658c699-da2c-4e11-b07f-b7526dd3482c.png)
+![image](https://user-images.githubusercontent.com/75159757/188652678-cd414447-1cc2-4084-a8fb-76684e7bbfa2.png)
+![image](https://user-images.githubusercontent.com/75159757/188652763-a7726dc2-d52a-4bcd-aea7-487d43812e47.png)
+![image](https://user-images.githubusercontent.com/75159757/188652916-1cb53b2f-9104-4902-a8eb-015fc988c4a9.png)
+![image](https://user-images.githubusercontent.com/75159757/188653018-52c31dc2-d41b-4d4b-9c6a-e05581323b2f.png)
+
 
 <!-- GETTING STARTED -->
 ## <img src="https://cdn.iconscout.com/icon/free/png-512/laptop-user-1-1179329.png" width="32" height="32"> Getting Started
