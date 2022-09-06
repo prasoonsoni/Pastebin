@@ -42,7 +42,7 @@ const Navbar = (props) => {
                     <Image src='/images/logo.png' alt='logo' height={70} onClick={() => navigate('/')} _hover={{ cursor: "pointer" }} />
                 </Box>
                 <Spacer />
-                <Button isLoading={loading} loadingText="Saving..." onClick={handleSave} mr={50} colorScheme="blue" leftIcon={<CheckCircleIcon />} variant="solid">Save</Button>
+                <Button display={{base:"none", md:"inherit"}} isLoading={loading} loadingText="Saving..." onClick={handleSave} mr={5} colorScheme="blue" leftIcon={<CheckCircleIcon />} variant="solid" value={{base:"", md:"Save"}}>Save</Button>
             </Flex>
         </>
     )

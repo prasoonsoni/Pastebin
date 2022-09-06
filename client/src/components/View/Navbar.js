@@ -1,8 +1,7 @@
-import { Button, Flex, Image, Spacer, Box, useToast } from '@chakra-ui/react'
+import { Button, Flex, Image, Spacer, Box } from '@chakra-ui/react'
 import React, { useState } from 'react'
-import { CheckCircleIcon } from '@chakra-ui/icons'
+import { EditIcon } from '@chakra-ui/icons'
 import { useNavigate } from 'react-router-dom'
-const BASE_URL = process.env.REACT_APP_BASE_URL
 const Navbar = (props) => {
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
@@ -18,7 +17,7 @@ const Navbar = (props) => {
                     <Image src='/images/logo.png' alt='logo' height={70} onClick={() => navigate('/')} _hover={{ cursor: "pointer" }} />
                 </Box>
                 <Spacer />
-                <Button isLoading={loading} loadingText="Saving..." onClick={handleEdit} mr={50} colorScheme="blue" leftIcon={<CheckCircleIcon />} variant="solid">Edit</Button>
+                <Button display={{ base: "none", md: "inherit" }} isLoading={loading} loadingText="Loading..." onClick={handleEdit} mr={50} colorScheme="blue" leftIcon={<EditIcon />} variant="solid">Edit</Button>
             </Flex>
         </>
     )

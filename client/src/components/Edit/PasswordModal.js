@@ -25,7 +25,7 @@ const PasswordModal = (props) => {
             return
         }
         setLoading(true)
-        const response = await fetch(`${BASE_URL}/api/get/${props.id}`, {
+        const response = await fetch(`${BASE_URL}/api/verify/${props.id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -67,7 +67,7 @@ const PasswordModal = (props) => {
                     backdropFilter='blur(5px)'
                 />
                 <ModalContent>
-                    <ModalHeader>Enter Password to Continue</ModalHeader>
+                    <ModalHeader>Enter Password to Verify</ModalHeader>
                     <ModalBody pb={6}>
                         <FormControl>
                             <FormLabel>Password</FormLabel>
@@ -83,8 +83,8 @@ const PasswordModal = (props) => {
                     </ModalBody>
 
                     <ModalFooter>
-                        <Button colorScheme='blue' mr={3} onClick={handleOnContinue} isLoading={loading} loadingText="Checking...">
-                            Continue
+                        <Button colorScheme='blue' mr={3} onClick={handleOnContinue} isLoading={loading} loadingText="Verifying...">
+                            Verify
                         </Button>
                         <Button onClick={handleOnCancel}>Cancel</Button>
                     </ModalFooter>

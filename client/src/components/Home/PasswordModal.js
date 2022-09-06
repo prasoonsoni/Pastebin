@@ -79,7 +79,7 @@ const PasswordModal = (props) => {
                     </ModalBody>
 
                     <ModalFooter>
-                        <Button colorScheme='blue' mr={3} onClick={handleOnCreate} isLoading={loading} loadingText="Saving...">
+                        <Button mr={3} colorScheme='blue' onClick={handleOnCreate} isLoading={loading} loadingText="Creating...">
                             Save
                         </Button>
                         <Button onClick={props.onClose}>Cancel</Button>

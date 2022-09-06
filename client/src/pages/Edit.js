@@ -21,7 +21,7 @@ const Edit = () => {
                 <PasswordModal isOpen={isOpen} onOpen={onOpen} onClose={onClose} id={id} setCorrect={setCorrect} setTitle={setTitle} setDescription={setDescription} />
                 {correct && <>
                     <Navbar id={id} title={title} description={description} />
-                    <Form title={title} description={description} setTitle={setTitle} setDescription={setDescription} />
+                    <Form id={id} title={title} description={description} setTitle={setTitle} setDescription={setDescription} />
                 </>}
             </VStack>
         </Box>

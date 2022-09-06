@@ -10,7 +10,7 @@ const Existing = () => {
     const handleOnClick = () => {   
         if(!id) {
             toast({
-                description: 'Please enter an ID',
+                title: 'Please enter an ID',
                 status: 'error',
                 duration: 2000,
             })
