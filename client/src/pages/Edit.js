@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { Box, VStack, Text, useDisclosure } from '@chakra-ui/react'
 import PasswordModal from '../components/Edit/PasswordModal'
-import Navbar from '../components/Navbar'
 import Form from '../components/Edit/Form'
+import Navbar from '../components/Edit/Navbar'
 
 const Edit = () => {
     const { id } = useParams()
