@@ -48,6 +48,7 @@ const Form = (props) => {
                     status: "error",
                     duration: 2000,
                 })
+                navigate('/NotFound')
             }
 
         }
