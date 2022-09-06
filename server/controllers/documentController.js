@@ -4,6 +4,20 @@ const bcrypt = require('bcryptjs')
 const getDocument = async (req, res) => {
     try {
         const id = req.params.id
+        const content = await Document.findOne({ _id: id }).select('-password')
+        if (!content) {
+            return res.json({ success: false, message: "Document not found" })
+        }
+        return res.json({ success: true, message: "Document Found", content })
+    } catch (error) {
+        console.log(error)
+        return res.json({ success: false, message: "Something went wrong. Try Again!!!" })
+    }
+}
+
+const verifyPassword = async (req, res) => {
+    try {
+        const id = req.params.id
         const { password } = req.body
         const content = await Document.findOne({ _id: id })
         const passwordMatches = await bcrypt.compare(password, content.password);
@@ -55,4 +69,4 @@ const updateDocument = async (req, res) => {
     }
 }
 
-module.exports = { getDocument, createDocument, updateDocument }
+module.exports = { getDocument, createDocument, updateDocument, verifyPassword }
