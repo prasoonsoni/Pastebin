@@ -1,8 +1,9 @@
 import { Button, Flex, Image, Spacer, Box, useToast } from '@chakra-ui/react'
 import React, { useState } from 'react'
-import { CheckCircleIcon } from '@chakra-ui/icons'
+import { CheckCircleIcon, CopyIcon } from '@chakra-ui/icons'
 import { useNavigate } from 'react-router-dom'
 const BASE_URL = process.env.REACT_APP_BASE_URL
+const URL = process.env.REACT_APP_URL
 const Navbar = (props) => {
     const [loading, setLoading] = useState(false)
     const toast = useToast()
@@ -35,6 +36,15 @@ const Navbar = (props) => {
         }
         setLoading(false)
     }
+    const handleCopy = () => {
+        navigator.clipboard.writeText(`${URL}/${props.id}`)
+        toast({
+            title: "Link Copied",
+            status: "success",
+            duration: 2000,
+        })
+    }
+
     return (
         <>
             <Flex w="100%" minWidth='max-content' alignItems='center' gap='2'>
@@ -42,7 +52,8 @@ const Navbar = (props) => {
                     <Image src='/images/logo.png' alt='logo' height={70} onClick={() => navigate('/')} _hover={{ cursor: "pointer" }} />
                 </Box>
                 <Spacer />
-                <Button display={{base:"none", md:"inherit"}} isLoading={loading} loadingText="Saving..." onClick={handleSave} mr={5} colorScheme="blue" leftIcon={<CheckCircleIcon />} variant="solid" value={{base:"", md:"Save"}}>Save</Button>
+                <Button display={{ base: "none", md: "inherit" }} isLoading={loading} loadingText="Saving..." onClick={handleSave} colorScheme="blue" leftIcon={<CheckCircleIcon />} variant="solid" value={{ base: "", md: "Save" }}>Save</Button>
+                <Button display={{ base: "none", md: "inherit" }} onClick={handleCopy} mr={5} colorScheme="blue" leftIcon={<CopyIcon />} variant="solid">Copy Link</Button>
             </Flex>
         </>
     )
