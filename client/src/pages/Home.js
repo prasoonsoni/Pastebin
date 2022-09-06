@@ -1,5 +1,6 @@
 import { Box, VStack } from '@chakra-ui/react'
 import React from 'react'
+import Footer from '../components/Footer'
 import CreateNew from '../components/Home/CreateNew'
 import Existing from '../components/Home/Existing'
 import Logo from '../components/Logo'
@@ -12,6 +13,7 @@ const Home = () => {
                 <Existing />
                 <CreateNew />
             </VStack>
+            <Footer/>
         </Box>
     )
 }
