@@ -8,7 +8,7 @@ const Navbar = (props) => {
     const handleSave = async () => {
         setLoading(true)
         const response = await fetch(`${BASE_URL}/api/update/${props.id}`, {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -31,6 +31,7 @@ const Navbar = (props) => {
                 duration: 2000,
             })
         }
+        setLoading(false)
     }
     return (
         <>
