@@ -39,8 +39,12 @@
 
 <!-- ABOUT THE PROJECT -->
 ## <img src="https://openclipart.org/download/307315/1538154643.svg" width="32" height="32"> About The Project
+With the help of Pastebin you can share some random texts, codes, links, logs etc. with everyone. You just need to create a document, set password to it for editing and share with everyone. You don't need any account creation, It's free from signin/signup. It's simpler than ever.
 
 ## <img src="https://cdn-icons-png.flaticon.com/512/427/427735.png" width="32" height="32"> Features
+- Create Documents
+- Set Password to Document for editing
+- Share Document with others
 
 ## <img src="https://techstackapps.com/media/2019/11/TechStackApps-logo-icon.png" width="32" height="32"> Tech Stack
 
